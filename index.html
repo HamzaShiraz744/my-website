@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bakchodnagar</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            ✦ Chodu Billa Raiem
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#surprise">Surprise</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <button id="musicBtn" class="music-btn">
+            ♫ Sound Off
+        </button>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-heading">
+                ⚡ SATURDAY GAND MRWA LYA KARO SHIRAZ E HAMZA STADIUM ME
+            </p>
+
+            <h1>
+                BHAG<br>
+                <span>BSDK</span>
+            </h1>
+
+            <p class="description">
+                AN BAN KA TOLA JO NA NAACHA BABA KA BAAP
+            </p>
+
+            <a href="page2.html" class="main-btn">
+              CLICK KAR BHARWE ↗
+             </a>
+
+        </div>
+
+       <div class="hero-circle">
+    <img src="images/WhatsApp Image 2026-11-20 at 3.57.22 AM.jpeg" alt="Hero Image">
+</div>
+
+    </section>
+
+
+    <!-- SURPRISE SECTION -->
+    <section class="surprise" id="surprise">
+
+        <p class="small-heading">01 / DIGGI KI GAAND</p>
+
+        <div class="surprise-card">
+
+            <div class="emoji">
+    <img src="images/WhatsApp Image 2026-11-20 at 3.58.27 AM.jpeg" alt="Surprise Image">
+</div>
+
+            <h2>Wait a minute!</h2>
+
+            <p id="surpriseText">
+                BHARWE ITNA DEHAAN TUNE KAHI OR DEDYA HOTA TO AJ YE HAAL NA HOTA 
+            </p>
+
+            <a href="./page3.html" class="secondary-btn">
+    PHIR DABANE KI SOCH RAHA HAI MDC? ↗
+</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+    <section class="about" id="about">
+
+        <p class="small-heading">02 / BABA KI RAAND K BARE ME TAFSEEL</p>
+
+        <h2>
+            Ek phal hai, sab mein batega,<br>
+            <span>dekhte hain kya sabko khane ka mauqa milega?</span>
+        </h2>
+
+        <p>
+            NOMAN GAON ME UNCLE PHASARHA HAI BIKE PR GHUMARHA HAI UNCLE KO
+            DIGGI AUNTIO ME BADNAAM THA YE ALAG LONDEBAZ NIKLA
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>© CHAL AB NIKAL</p>
+
+        <p>HYDERABAD KI TRAIN PAKARNI HAI</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+<div class="popup" id="surprisePopup">
+
+    <div class="popup-card">
+
+        <div class="emoji">😂</div>
+
+        <h2>Oye BSDK!</h2>
+
+        <p id="surpriseText">
+            Ek phal hai, sab mein batega,
+            dekhte hain kya sabko khane ka
+            mauqa milega?
+        </p>
+
+        <button onclick="closeSurprise()">
+            Hahaha! 😂
+        </button>
+
+    </div>
+
+</div>
+
+<audio id="bgMusic" autoplay loop>
+    <source src="song/Harami Urdu Qawwali Gana - Hum Ghus Key Chodain Gay.flv - don09ind (128k).mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const music = document.getElementById("bgMusic");
+
+music.volume = 0.5;
+
+// Try autoplay immediately
+window.addEventListener("load", function() {
+    music.play().catch(() => {
+        console.log("Browser blocked autoplay");
+    });
+});
+
+// Start music on first interaction if blocked
+document.addEventListener("click", function startMusic() {
+    music.play();
+}, { once: true });
+</script>
+
+<style>
+    #musicControl {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 999999;
+        background: #78e0c2;
+        color: #07120f;
+        border: none;
+        padding: 15px 22px;
+        border-radius: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        pointer-events: auto;
+    }
+</style>
+
+<script>
+    const music = document.getElementById("bgMusic");
+    const musicControl = document.getElementById("musicControl");
+
+    async function toggleMusic() {
+
+        if (music.paused) {
+            try {
+                await music.play();
+                musicControl.innerText = "🔊 SOUND ON";
+            } catch (error) {
+                alert("Music error: " + error.message);
+            }
+        } else {
+            music.pause();
+            musicControl.innerText = "🎵 PLAY MUSIC";
+        }
+
+    }
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
